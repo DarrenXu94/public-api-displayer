@@ -1,9 +1,9 @@
 import { atom, selector, selectorFamily } from "recoil";
 import { getAllCategories, getAllEntires } from "../utils/api";
 
-export const entries = atom({
-  key: "entries",
-  default: [],
+export const selectedCategoryState = atom({
+  key: "selectedCategory",
+  default: null as string | null,
 });
 
 export const entriesQuery = selectorFamily({
