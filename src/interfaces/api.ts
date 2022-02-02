@@ -7,3 +7,8 @@ export interface APIInterface {
   Link: string;
   Category: string;
 }
+
+export interface APICategory {
+  count: number;
+  categories: string[];
+}
