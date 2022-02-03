@@ -24,7 +24,8 @@ export default function Sidebar({}: SidebarProps) {
     // </div>
     // <div className="relative bg-white dark:bg-gray-800">
     //   <div className="flex flex-col ">
-    <div className="w-72 h-screen overflow-auto min-w-sm">
+    <div>
+      {/* <div className="w-72 sm:w-sm sm:min-w-xs min-w-sm"> */}
       <nav className="mt-10 px-6 ">
         {allCategories &&
           allCategories.categories.map((category) => {
