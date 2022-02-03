@@ -4,11 +4,12 @@ import "./index.css";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 import "virtual:windi.css";
+import Loading from "./components/Loading";
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense fallback={<Loading message="Loading" />}>
         <App />
       </React.Suspense>
     </RecoilRoot>

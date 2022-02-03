@@ -4,7 +4,10 @@ export interface HeadingProps {}
 
 export default function Heading({}: HeadingProps) {
   return (
-    <div className="p-5 flex justify-center items-center flex-col h-full">
+    <div
+      className="p-5 flex justify-center items-center flex-col h-full"
+      style={{ borderBottom: "10px solid #f9fafb" }}
+    >
       <h1 className="text-3xl text-center ">A Collection of Public APIs</h1>
       <p className="text-center">
         See this{" "}

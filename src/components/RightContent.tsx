@@ -2,6 +2,7 @@ import React from "react";
 import { useRecoilState } from "recoil";
 import { selectedCategoryState } from "../store/atoms";
 import CategoryDetail from "./CategoryDetail";
+import Loading from "./Loading";
 
 export interface RightContentProps {}
 
@@ -17,7 +18,10 @@ export default function RightContent({}: RightContentProps) {
 
       {selectedCategory && (
         <React.Suspense
-          fallback={<div>Loading your {selectedCategory} APIs</div>}
+          //   fallback={<div>Loading your {selectedCategory} APIs</div>}
+          fallback={
+            <Loading message={`Loading your ${selectedCategory} APIs`} />
+          }
         >
           <div className="m-6">
             <CategoryDetail category={selectedCategory} />{" "}
