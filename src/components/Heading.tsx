@@ -4,8 +4,8 @@ export interface HeadingProps {}
 
 export default function Heading({}: HeadingProps) {
   return (
-    <div className="p-5">
-      <h1 className="text-3xl text-center">A Collection of Public APIs</h1>
+    <div className="p-5 flex justify-center items-center flex-col h-full">
+      <h1 className="text-3xl text-center ">A Collection of Public APIs</h1>
       <p className="text-center">
         See this{" "}
         <a
