@@ -7,9 +7,9 @@ export interface CardProps {
 export default function Card({ children }: CardProps) {
   return (
     <div
-      className="py-8 px-8 inline-flex 
-  bg-white dark:bg-gray-400 dark:bg-opacity-10
-  rounded-xl shadow-md space-y-2 m-2 cursor-pointer hover:bg-gray-50"
+      className="m-2 inline-flex cursor-pointer 
+  space-y-2 rounded-xl bg-white
+  py-8 px-8 shadow-md hover:bg-gray-50 dark:bg-gray-400 dark:bg-opacity-10"
     >
       {children}
     </div>

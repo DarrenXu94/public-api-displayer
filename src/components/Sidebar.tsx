@@ -31,7 +31,7 @@ export default function Sidebar({}: SidebarProps) {
           allCategories.categories.map((category) => {
             return (
               <div
-                className="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg cursor-pointer"
+                className="my-6 flex cursor-pointer items-center rounded-lg p-2 text-gray-600 transition-colors duration-200 hover:bg-gray-100  hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                 onClick={() => setSelectedCategory(category)}
                 key={category}
               >

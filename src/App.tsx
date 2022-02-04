@@ -6,9 +6,9 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div className="bg-gray-50 overflow-hidden">
-      <div className="md:container mx-auto ">
-        <div className="relative bg-white dark:bg-gray-800 h-screen">
+    <div className="overflow-hidden bg-gray-50">
+      <div className="mx-auto md:container ">
+        <div className="relative h-screen bg-white dark:bg-gray-800">
           <div
             className="grid grid-cols-3 grid-rows-2"
             style={{ gridTemplateRows: "150px auto" }}

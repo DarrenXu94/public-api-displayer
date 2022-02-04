@@ -12,7 +12,7 @@ export default function RightContent({}: RightContentProps) {
   );
   return (
     <div className="flex flex-col ">
-      <div className="m-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
+      <div className="m-6 text-xl font-light text-gray-600 dark:text-white sm:text-2xl">
         {selectedCategory}
       </div>
 
