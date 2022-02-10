@@ -9,8 +9,13 @@ export const selectedCategoryState = atom({
 export const entriesQuery = selectorFamily({
   key: "getEntries",
   get: (category) => async () => {
-    const response = await getAllEntires();
-    return response.entries.filter((res) => res.Category == category);
+    try {
+      const response = await getAllEntires();
+
+      return response.entries.filter((res) => res.Category == category);
+    } catch (e: any) {
+      throw new Error(e.message);
+    }
   },
 });
 

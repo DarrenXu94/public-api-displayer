@@ -1,7 +1,9 @@
 import React from "react";
-import { useRecoilState } from "recoil";
+import { ErrorBoundary } from "react-error-boundary";
+import { useRecoilRefresher_UNSTABLE, useRecoilState } from "recoil";
 import { selectedCategoryState } from "../store/atoms";
 import CategoryDetail from "./CategoryDetail";
+import ErrorFallback from "./ErrorFallback";
 import Loading from "./Loading";
 
 export interface RightContentProps {}
@@ -10,6 +12,8 @@ export default function RightContent({}: RightContentProps) {
   const [selectedCategory, setSelectedCategory] = useRecoilState(
     selectedCategoryState
   );
+  const refreshUserInfo = useRecoilRefresher_UNSTABLE(selectedCategoryState);
+
   return (
     <div className="flex flex-col ">
       <div className="m-6 text-xl font-light text-gray-600 dark:text-white sm:text-2xl">
@@ -18,13 +22,19 @@ export default function RightContent({}: RightContentProps) {
 
       {selectedCategory && (
         <React.Suspense
-          //   fallback={<div>Loading your {selectedCategory} APIs</div>}
           fallback={
             <Loading message={`Loading your ${selectedCategory} APIs`} />
           }
         >
           <div className="m-6">
-            <CategoryDetail category={selectedCategory} />{" "}
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => {
+                refreshUserInfo();
+              }}
+            >
+              <CategoryDetail category={selectedCategory} />{" "}
+            </ErrorBoundary>
           </div>
         </React.Suspense>
       )}

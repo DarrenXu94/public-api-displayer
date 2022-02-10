@@ -13,20 +13,13 @@ export default function Sidebar({}: SidebarProps) {
   );
 
   return (
-    // <div>
-    //   {allCategories.map((category) => {
-    //     return (
-    //       <div onClick={() => setSelectedCategory(category)} key={category}>
-    //         {category}
-    //       </div>
-    //     );
-    //   })}
-    // </div>
-    // <div className="relative bg-white dark:bg-gray-800">
-    //   <div className="flex flex-col ">
     <div style={{ height: "calc(100vh - 5%)", overflow: "auto" }}>
-      {/* <div className="w-72 sm:w-sm sm:min-w-xs min-w-sm"> */}
       <nav className="mt-10 px-6">
+        {allCategories && (
+          <p className="p-2 text-gray-600">
+            <b>{allCategories.count} categories found</b>
+          </p>
+        )}
         {allCategories &&
           allCategories.categories.map((category) => {
             return (
@@ -41,7 +34,5 @@ export default function Sidebar({}: SidebarProps) {
           })}
       </nav>
     </div>
-    //   </div>
-    // </div>
   );
 }
