@@ -1,7 +1,11 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { useRecoilRefresher_UNSTABLE, useRecoilState } from "recoil";
-import { selectedCategoryState } from "../store/atoms";
+import {
+  useRecoilRefresher_UNSTABLE,
+  useRecoilState,
+  useResetRecoilState,
+} from "recoil";
+import { entriesQuery, selectedCategoryState } from "../store/atoms";
 import CategoryDetail from "./CategoryDetail";
 import ErrorFallback from "./ErrorFallback";
 import Loading from "./Loading";
@@ -12,7 +16,9 @@ export default function RightContent({}: RightContentProps) {
   const [selectedCategory, setSelectedCategory] = useRecoilState(
     selectedCategoryState
   );
-  const refreshUserInfo = useRecoilRefresher_UNSTABLE(selectedCategoryState);
+  const refreshUserInfo = useRecoilRefresher_UNSTABLE(
+    entriesQuery(selectedCategory)
+  );
 
   return (
     <div className="flex flex-col ">

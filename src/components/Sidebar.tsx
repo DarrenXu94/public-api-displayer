@@ -24,7 +24,9 @@ export default function Sidebar({}: SidebarProps) {
           allCategories.categories.map((category) => {
             return (
               <div
-                className="my-6 flex cursor-pointer items-center rounded-lg p-2 text-gray-600 transition-colors duration-200 hover:bg-gray-100  hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                className={`my-6 flex cursor-pointer items-center rounded-lg p-2 text-gray-600 transition-colors duration-200 hover:bg-gray-100  hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white ${
+                  selectedCategory == category ? "bg-gray-100" : "bg-white"
+                }`}
                 onClick={() => setSelectedCategory(category)}
                 key={category}
               >

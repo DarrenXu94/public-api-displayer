@@ -11,12 +11,23 @@ export const entriesQuery = selectorFamily({
   get: (category) => async () => {
     try {
       const response = await getAllEntires();
+      console.log({ response });
 
       return response.entries.filter((res) => res.Category == category);
     } catch (e: any) {
       throw new Error(e.message);
     }
   },
+  // reset: (category) => async () => {
+  //   try {
+  //     const response = await getAllEntires();
+  //     console.log({ response });
+
+  //     return response.entries.filter((res) => res.Category == category);
+  //   } catch (e: any) {
+  //     throw new Error(e.message);
+  //   }
+  // }
 });
 
 export const categoriesQuery = selector({

@@ -59,6 +59,13 @@ const mockCategories = [
 
 export const handlers = [
   rest.get(entries, (req, res, ctx) => {
+    const rand = Math.random() < 0.5;
+
+    // Mocking random fails
+    if (rand) {
+      console.log("Is this reaching");
+      return res(ctx.status(500));
+    }
     return res(
       ctx.status(200),
       ctx.json({
